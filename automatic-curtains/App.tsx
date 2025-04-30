@@ -2,13 +2,18 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context'
+import CurtainControls from './models/curtainControls';
+import { controlCurtain } from './api/curtainCalls';
 
 export default function App() {
   const [isOn, setIsOn] = useState<boolean>(true);
-  const [isQualityGood, setIsQualityGood] = useState<boolean>(true);
 
   const handlePress = () => {
     setIsOn(!isOn)
+  }
+
+  const handleControls = (control: CurtainControls) => {
+    controlCurtain(control)
   }
 
   return (
@@ -16,6 +21,7 @@ export default function App() {
       <SafeAreaView style={{ flex: 1 }}>
         <Text style={styles.header}>Automatic Curtains</Text>
         <View style={styles.btn}>
+          <Text>Enable or disable automatic mode</Text>
           <Button
             title={isOn ? 'On' : 'Off'}
             color={'black'}
@@ -24,13 +30,13 @@ export default function App() {
         </View>
         <View style={styles.container}>
           <View style={styles.buttonRow}>
-            <TouchableOpacity style={styles.button} onPress={() => {}}>
+            <TouchableOpacity style={styles.button} onPress={() => handleControls(CurtainControls.OPEN)}>
               <Text style={styles.buttonText}>Open</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => {}}>
+            <TouchableOpacity style={styles.button} onPress={() => handleControls(CurtainControls.STOP)}>
               <Text style={styles.buttonText}>Stop</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => {}}>
+            <TouchableOpacity style={styles.button} onPress={() => handleControls(CurtainControls.CLOSED)}>
               <Text style={styles.buttonText}>Close</Text>
             </TouchableOpacity>
           </View>
