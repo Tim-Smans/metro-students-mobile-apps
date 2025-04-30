@@ -1,20 +1,42 @@
 import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context'
 import CurtainControls from './models/curtainControls';
-import { controlCurtain } from './api/curtainCalls';
+import { controlAutomaticCurtain, controlCurtain, getAutomaticMode } from './api/curtainCalls';
+import { AutomaticControls } from './models/automaticControls';
 
 export default function App() {
   const [isOn, setIsOn] = useState<boolean>(true);
 
-  const handlePress = () => {
+  const handlePress = async () => {
+
+    var automaticControl = AutomaticControls.ON
+    if(isOn){
+      automaticControl = AutomaticControls.OFF
+    }
+
+    await controlAutomaticCurtain(automaticControl)
+
     setIsOn(!isOn)
   }
 
-  const handleControls = (control: CurtainControls) => {
-    controlCurtain(control)
+  const handleControls = async (control: CurtainControls) => {
+    await controlCurtain(control)
   }
+
+  useEffect(() => {
+    const fetchMode = async () => {
+      try {
+        const mode = await getAutomaticMode()
+        setIsOn(mode === AutomaticControls.ON)
+      } catch (err) {
+        console.error('Failed to fetch automatic mode:', err)
+      }
+    }
+  
+    fetchMode()
+  }, [])
 
   return (
     <SafeAreaProvider >
@@ -30,13 +52,13 @@ export default function App() {
         </View>
         <View style={styles.container}>
           <View style={styles.buttonRow}>
-            <TouchableOpacity style={styles.button} onPress={() => handleControls(CurtainControls.OPEN)}>
+            <TouchableOpacity style={styles.button} onPress={async () => await handleControls(CurtainControls.OPEN)}>
               <Text style={styles.buttonText}>Open</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => handleControls(CurtainControls.STOP)}>
+            <TouchableOpacity style={styles.button} onPress={async () => await handleControls(CurtainControls.STOP)}>
               <Text style={styles.buttonText}>Stop</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => handleControls(CurtainControls.CLOSED)}>
+            <TouchableOpacity style={styles.button} onPress={async () => await handleControls(CurtainControls.CLOSED)}>
               <Text style={styles.buttonText}>Close</Text>
             </TouchableOpacity>
           </View>
