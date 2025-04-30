@@ -1,0 +1,387 @@
+[
+    {
+      "name": "Snake Plant",
+      "frequency": 14,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Peace Lily",
+      "frequency": 7,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Spider Plant",
+      "frequency": 6,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Fiddle Leaf Fig",
+      "frequency": 7,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Aloe Vera",
+      "frequency": 14,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Pothos",
+      "frequency": 8,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "ZZ Plant",
+      "frequency": 14,
+      "water_amount_ml": 90
+    },
+    {
+      "name": "Boston Fern",
+      "frequency": 2,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Rubber Plant",
+      "frequency": 7,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Jade Plant",
+      "frequency": 14,
+      "water_amount_ml": 60
+    },
+    {
+      "name": "Monstera",
+      "frequency": 10,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Philodendron",
+      "frequency": 10,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Calathea",
+      "frequency": 6,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Dracaena",
+      "frequency": 14,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Begonia",
+      "frequency": 4,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Succulents",
+      "frequency": 21,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "African Violet",
+      "frequency": 6,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Orchid",
+      "frequency": 8,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Cactus (general)",
+      "frequency": 21,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Croton",
+      "frequency": 10,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Aglaonema",
+      "frequency": 10,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Areca Palm",
+      "frequency": 6,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Asparagus Fern",
+      "frequency": 3,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Bird of Paradise",
+      "frequency": 10,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Bromeliad",
+      "frequency": 10,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Cast Iron Plant",
+      "frequency": 14,
+      "water_amount_ml": 60
+    },
+    {
+      "name": "Chinese Evergreen",
+      "frequency": 8,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Crocodile Fern",
+      "frequency": 2,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Dieffenbachia",
+      "frequency": 6,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "English Ivy",
+      "frequency": 6,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Euphorbia",
+      "frequency": 21,
+      "water_amount_ml": 60
+    },
+    {
+      "name": "Fittonia (Nerve Plant)",
+      "frequency": 4,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Hoya (Wax Plant)",
+      "frequency": 10,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Kentia Palm",
+      "frequency": 8,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Kalanchoe",
+      "frequency": 14,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Lemon Balm",
+      "frequency": 3,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Lucky Bamboo",
+      "frequency": 7,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Maidenhair Fern",
+      "frequency": 1,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Moth Orchid",
+      "frequency": 8,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Norfolk Island Pine",
+      "frequency": 6,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Oxalis (Purple Shamrock)",
+      "frequency": 4,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Parlor Palm",
+      "frequency": 10,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Peperomia",
+      "frequency": 10,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Pilea",
+      "frequency": 6,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Polka Dot Plant",
+      "frequency": 2,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Ponytail Palm",
+      "frequency": 14,
+      "water_amount_ml": 90
+    },
+    {
+      "name": "Prayer Plant",
+      "frequency": 4,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Rattlesnake Plant",
+      "frequency": 6,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Rex Begonia",
+      "frequency": 4,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Rosemary",
+      "frequency": 3,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Rubber Tree",
+      "frequency": 7,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Schefflera",
+      "frequency": 10,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Scindapsus",
+      "frequency": 10,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Sedum",
+      "frequency": 14,
+      "water_amount_ml": 60
+    },
+    {
+      "name": "Staghorn Fern",
+      "frequency": 7,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Strawberry Begonia",
+      "frequency": 6,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Swiss Cheese Plant",
+      "frequency": 10,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Turtle Vine",
+      "frequency": 4,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Umbrella Plant",
+      "frequency": 6,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Wandering Jew",
+      "frequency": 4,
+      "water_amount_ml": 240
+    },
+    {
+      "name": "Basil",
+      "frequency": 2,
+      "water_amount_ml": 120
+    },
+    {
+      "name": "Mint",
+      "frequency": 2,
+      "water_amount_ml": 180
+    },
+    {
+      "name": "Parsley",
+      "frequency": 3,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Cilantro",
+      "frequency": 2,
+      "water_amount_ml": 120
+    },
+    {
+      "name": "Thyme",
+      "frequency": 5,
+      "water_amount_ml": 100
+    },
+    {
+      "name": "Oregano",
+      "frequency": 5,
+      "water_amount_ml": 100
+    },
+    {
+      "name": "Sage",
+      "frequency": 7,
+      "water_amount_ml": 120
+    },
+    {
+      "name": "Dill",
+      "frequency": 3,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Chives",
+      "frequency": 3,
+      "water_amount_ml": 120
+    },
+    {
+      "name": "Lavender",
+      "frequency": 7,
+      "water_amount_ml": 100
+    },
+    {
+      "name": "Tarragon",
+      "frequency": 4,
+      "water_amount_ml": 120
+    },
+    {
+      "name": "Bay Leaf",
+      "frequency": 7,
+      "water_amount_ml": 150
+    },
+    {
+      "name": "Lemongrass",
+      "frequency": 2,
+      "water_amount_ml": 180
+    },
+    {
+      "name": "Marjoram",
+      "frequency": 4,
+      "water_amount_ml": 120
+    },
+    {
+      "name": "Chervil",
+      "frequency": 3,
+      "water_amount_ml": 120
+    },
+    {
+      "name": "Coriander",
+      "frequency": 2,
+      "water_amount_ml": 120
+    },
+    {
+      "name": "Fennel",
+      "frequency": 3,
+      "water_amount_ml": 150
+    }
+  ]
