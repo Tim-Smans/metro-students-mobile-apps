@@ -20,10 +20,16 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "be.timsmans.plant-plots"
+      "package": "be.timsmans.plant_plots"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "f6807d54-42bc-40bc-aba7-7a00cca2bfd7"
+      }
+    },
+    "owner": "timsmans"
   }
 }

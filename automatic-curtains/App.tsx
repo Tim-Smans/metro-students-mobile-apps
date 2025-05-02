@@ -26,12 +26,19 @@ export default function App() {
   }
 
   useEffect(() => {
+    console.log('test')
     const fetchMode = async () => {
       try {
         const mode = await getAutomaticMode()
-        setIsOn(mode === AutomaticControls.ON)
+        if (mode === AutomaticControls.ON || mode === AutomaticControls.OFF) {
+          setIsOn(mode === AutomaticControls.ON)
+        } else {
+          console.warn('API gaf onverwachte waarde terug:', mode)
+          setIsOn(false) // fallback naar OFF
+        }
       } catch (err) {
         console.error('Failed to fetch automatic mode:', err)
+        setIsOn(false) // fallback
       }
     }
   
@@ -51,6 +58,7 @@ export default function App() {
           />
         </View>
         <View style={styles.container}>
+          <Text>Control the curtains manually:</Text>
           <View style={styles.buttonRow}>
             <TouchableOpacity style={styles.button} onPress={async () => await handleControls(CurtainControls.OPEN)}>
               <Text style={styles.buttonText}>Open</Text>
@@ -58,7 +66,7 @@ export default function App() {
             <TouchableOpacity style={styles.button} onPress={async () => await handleControls(CurtainControls.STOP)}>
               <Text style={styles.buttonText}>Stop</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={async () => await handleControls(CurtainControls.CLOSED)}>
+            <TouchableOpacity style={styles.button} onPress={async () => await handleControls(CurtainControls.CLOSE)}>
               <Text style={styles.buttonText}>Close</Text>
             </TouchableOpacity>
           </View>

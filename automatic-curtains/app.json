@@ -20,10 +20,16 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "be.timsmans.automatic-curtains"
+      "package": "be.timsmans.automatic_curtains"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5bc9791d-32ab-44c2-9b2d-fbfddde36f1f"
+      }
+    },
+    "owner": "timsmans"
   }
 }

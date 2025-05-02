@@ -1,6 +1,6 @@
 enum CurtainControls{
-  OPEN,
-  STOP,
-  CLOSED
+  OPEN = "open",
+  STOP = "stop",
+  CLOSE = "close"
 }
 export default CurtainControls

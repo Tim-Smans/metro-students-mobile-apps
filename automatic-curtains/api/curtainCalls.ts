@@ -10,13 +10,15 @@ const client = axios.create(
 )
 
 export const controlCurtain = async (data: CurtainControls) => {
-  const control = data.toString().toLowerCase()
+  const control = data
   console.log(control)
-  const resp = await client.post('/curtain/', control)
+  const resp = await client.post('/curtain/', 
+    { command: control }, 
+    { headers: { 'Content-Type': 'application/json' }})
 
   if(resp.status != 200) {
-    console.error('Something went wrong while controlling curtains:')
-    console.error(resp.data)
+    console.log('Something went wrong while controlling curtains:')
+    console.log(resp.data)
     return
   }
 
@@ -33,19 +35,20 @@ export const getAutomaticMode = async () => {
     return
   }
 
-  return data
+  return data.automatic_mode
 }
 
 export const controlAutomaticCurtain = async (data: AutomaticControls) => {
-  const control = data.toString().toLowerCase()
+  const control = data
   console.log(control)
-  const resp = await client.post('/curtain/automatic', control)
+  const resp = await client.post('/curtain/automatic', 
+     { command: control }, 
+     { headers: { 'Content-Type': 'application/json' }})
 
   if(resp.status != 200) {
-    console.error('Something went wrong while controlling curtains:')
-    console.error(resp.data)
+    console.log('Something went wrong while controlling curtains:')
+    console.log(resp.data)
     return
   }
-
   console.log(resp.data)
 }

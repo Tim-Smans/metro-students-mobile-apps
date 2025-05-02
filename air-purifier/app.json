@@ -20,10 +20,16 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "be.timsmans.airpurifier"
+      "package": "be.timsmans.air_purifier"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "48f179cc-66a0-4895-828d-9400df638702"
+      }
+    },
+    "owner": "timsmans"
   }
 }
