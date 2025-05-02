@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
-import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context'
 import CurtainControls from './models/curtainControls';
 import { controlAutomaticCurtain, controlCurtain, getAutomaticMode } from './api/curtainCalls';
@@ -8,6 +8,7 @@ import { AutomaticControls } from './models/automaticControls';
 
 export default function App() {
   const [isOn, setIsOn] = useState<boolean>(true);
+  const [deviceId, setDeviceId] = useState<string>("1");
 
   const handlePress = async () => {
 
@@ -16,20 +17,20 @@ export default function App() {
       automaticControl = AutomaticControls.OFF
     }
 
-    await controlAutomaticCurtain(automaticControl)
+    await controlAutomaticCurtain(automaticControl, deviceId)
 
     setIsOn(!isOn)
   }
 
   const handleControls = async (control: CurtainControls) => {
-    await controlCurtain(control)
+    await controlCurtain(control, deviceId)
   }
 
   useEffect(() => {
     console.log('test')
     const fetchMode = async () => {
       try {
-        const mode = await getAutomaticMode()
+        const mode = await getAutomaticMode(deviceId)
         if (mode === AutomaticControls.ON || mode === AutomaticControls.OFF) {
           setIsOn(mode === AutomaticControls.ON)
         } else {
@@ -49,6 +50,19 @@ export default function App() {
     <SafeAreaProvider >
       <SafeAreaView style={{ flex: 1 }}>
         <Text style={styles.header}>Automatic Curtains</Text>
+        <View>
+          <Text>Curtain Id:</Text>
+          <TextInput value={deviceId} onChangeText={setDeviceId} 
+          style={{
+                    borderWidth: 1,
+                    borderColor: 'gray',
+                    padding: 8,
+                    marginTop: 5,
+                    marginBottom: 20,
+                    width: '50%'
+                 }}
+          keyboardType="numeric"/>
+        </View>
         <View style={styles.btn}>
           <Text>Enable or disable automatic mode</Text>
           <Button

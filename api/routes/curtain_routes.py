@@ -1,33 +1,32 @@
 from typing import Literal
-from fastapi import APIRouter
+from fastapi import APIRouter, Path
 from pydantic import BaseModel
-
 
 router = APIRouter()
 
-curtain_status = {"status": "stop"}
-curtain_automatic = {"automatic_mode": "on"}
+curtain_status = {}
+curtain_automatic = {}
 
 class CurtainCommand(BaseModel):
     command: Literal["open", "close", "stop"]
 
 class AutomaticCommand(BaseModel):
     command: Literal["on", "off"]
-    
-@router.post("/", status_code=200)
-def control_curtain(data: CurtainCommand):
-    curtain_status['status'] = data.command.lower()
-    return {"message": f"Curtain command received: {data.command}"}
 
-@router.post("/automatic", status_code=200)
-def manage_purifier(data: AutomaticCommand):
-    curtain_automatic['automatic_mode'] = data.command.lower()
-    return {"message": f"Automatic mode toggled: {data.command}"}
+@router.post("/{device_id}/manual", status_code=200)
+def control_curtain(device_id: str, data: CurtainCommand):
+    curtain_status[device_id] = data.command.lower()
+    return {"message": f"Curtain command for {device_id}: {data.command}"}
 
-@router.get("/status")
-def get_curtain_status():
-    return {"status": curtain_status["status"]}
+@router.post("/{device_id}/automatic", status_code=200)
+def manage_sensors(device_id: str, data: AutomaticCommand):
+    curtain_automatic[device_id] = data.command.lower()
+    return {"message": f"Automatic mode for {device_id}: {data.command}"}
 
-@router.get("/automatic")
-def get_curtain_status():
-    return {"automatic_mode": curtain_automatic["automatic_mode"]}
+@router.get("/{device_id}/manual")
+def sensor_status(device_id: str):
+    return {"manual_command": curtain_status.get(device_id, "unknown")}
+
+@router.get("/{device_id}/automatic")
+def get_automatic_mode(device_id: str):
+    return {"sensors_enabled": curtain_automatic.get(device_id, "unknown")}
